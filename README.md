@@ -2,7 +2,9 @@
 
 This Python script processes 3D point cloud data (e.g., from PLY files) to create a photorealistic digital twin, with a focus on enhancing hair quality. It cleans the point cloud, segments the human subject and hair, refines the hair, and augments it for a natural look. The script supports both color-based and geometry-based (density/curvature) hair segmentation, making it robust for point clouds with or without color data.
 
-![Cleaned vs. Enhanmced](img/cleaned-vs-enhanced-2.png "Cleaned vs. Enhanmced")
+The following image shows the result of processing a point cloud of a person with curly dark hair. The blue points represent the original cleaned point cloud, while the brown points (reflecting the true color of the original hair) represent the enhanced hair after segmentation, refinement, and augmentation:
+
+![Cleaned vs. Enhanmced](img/cleaned-vs-enhanced-3.png "Cleaned vs. Enhanmced")
 
 ## Features
 - **Cleaning**: Removes background and noise using depth thresholding and statistical outlier removal.
@@ -42,7 +44,7 @@ This processes `input.ply`, enhances the hair, visualizes the cleaned point clou
 
 ### Advanced Example
 ```bash
-python point_cloud_portrait_processor.py input.ply --output_file enhanced_hair.pcd --depth_threshold 2.5 --voxel_size 0.015 --smooth_radius 0.05 --densify_factor 2 --smooth_iterations 3
+python point_cloud_portrait_processor.py ../data/point_cloud_portrait_test.ply --output_file ../data/point_cloud_portrait_test_enhanced.ply --lower_hair 0 0 0 --upper_hair 40 80 70 --depth_threshold 2.5 --voxel_size 0.001 --eps_human 0.06 --smooth_radius 0.01 --densify_factor 8 --smooth_iterations 2
 ```
 This uses custom settings for depth thresholding, downsampling, and hair augmentation.
 
