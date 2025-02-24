@@ -2,7 +2,7 @@
 
 This Python script processes 3D point cloud data (e.g., from PLY files) to create a photorealistic digital twin, with a focus on enhancing hair quality. It cleans the point cloud, segments the human subject and hair, refines the hair, and augments it for a natural look. The script supports both color-based and geometry-based (density/curvature) hair segmentation, making it robust for point clouds with or without color data.
 
-![Cleaned vs. Enhanmced](img/cleaned-vs-enhanced.png "Cleaned vs. Enhanmced")
+![Cleaned vs. Enhanmced](img/cleaned-vs-enhanced-2.png "Cleaned vs. Enhanmced")
 
 ## Features
 - **Cleaning**: Removes background and noise using depth thresholding and statistical outlier removal.
